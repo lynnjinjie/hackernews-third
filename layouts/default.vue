@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 defineOptions({
-  name: 'Default'
+  name: 'Default',
 })
 const props = defineProps<{
   value?: boolean
@@ -9,8 +9,9 @@ const props = defineProps<{
 
 <template>
   <div>
-    <NuxtLink to="/">home</NuxtLink>
-    <NuxtLink to="/about">about</NuxtLink>
-    <slot />
+    <Header />
+    <main mx-auto max-w-3xl>
+      <slot />
+    </main>
   </div>
 </template>

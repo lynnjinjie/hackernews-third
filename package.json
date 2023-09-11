@@ -9,7 +9,11 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.41.0",
     "@nuxt/devtools": "latest",
+    "@unocss/eslint-config": "^0.55.7",
+    "@unocss/nuxt": "^0.55.7",
+    "eslint": "^8.49.0",
     "nuxt": "^3.7.1"
   }
 }

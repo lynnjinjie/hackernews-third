@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 defineOptions({
-  name: 'About'
+  name: 'About',
 })
 const props = defineProps<{
   value?: boolean
