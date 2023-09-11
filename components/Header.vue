@@ -5,11 +5,28 @@ const props = defineProps<{
 </script>
 
 <template>
-  <header w-full bg-red-200>
-    <nav mx-auto max-w-3xl>
-      <NuxtLink to="/">
+  <header sticky top-0 w-full border-b p-2 backdrop-blur-md>
+    <nav mx-auto max-w-3xl flex items-center gap-3 text-base>
+      <NuxtLink to="/" flex>
+        <img src="/y18.svg" alt="Hacker News" mr-1>
+        <h2 text-lg font-semibold font-mono>
+          Hacker News
+        </h2>
+      </NuxtLink>
+      <NuxtLink to="/newest/1">
         news
       </NuxtLink>
+      <NuxtLink to="/">
+        past
+      </NuxtLink>
+      <NuxtLink to="/">
+        comments
+      </NuxtLink>
+      <NuxtLink to="/about">
+        about
+      </NuxtLink>
+      <div flex-1 />
+      <ToggleTheme />
     </nav>
   </header>
 </template>

@@ -1,12 +1,14 @@
 <script setup>
-const props = defineProps([])
-defineOptions({
-  name: 'Home'
+definePageMeta({
+  middleware: (from) => {
+    if (from.path === '/')
+      return navigateTo('/news/1')
+  },
 })
 </script>
 
 <template>
   <div>
-    Home page
+    Home
   </div>
 </template>

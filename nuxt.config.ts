@@ -2,9 +2,16 @@
 export default defineNuxtConfig({
   modules: [
     '@unocss/nuxt',
+    '@vueuse/nuxt',
+    '@pinia/nuxt',
+    // '@nuxtjs/dayjs',
+    '@nuxtjs/color-mode',
   ],
   css: [
     '@unocss/reset/tailwind.css',
   ],
+  colorMode: {
+    classSuffix: '',
+  },
   devtools: { enabled: true },
 })
