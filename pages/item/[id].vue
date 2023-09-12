@@ -9,7 +9,7 @@ useHead({
 </script>
 
 <template>
-  <div>
+  <div px-2 pb-4>
     <header>
       <a v-if="item?.url" :href="item.url" target="_blank" inline-block py-1 underline hover:decoration-dotted>
         <h2 text-2xl font-semibold>{{ item.title }}</h2>
