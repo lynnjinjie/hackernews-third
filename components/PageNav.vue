@@ -15,7 +15,7 @@ const hasMore = computed(() => props.page < maxPage.value)
 
 <template>
   <div v-if="maxPage" m-2>
-    <NuxtLink v-if="page > 1" pr-2 :to="`/${nav}/${page - 1}`">
+    <NuxtLink v-if="page > 1" :to="`/${nav}/${page - 1}`">
       &lt; prev
     </NuxtLink>
     <span v-else text-gray>&lt; prev</span>

@@ -2,6 +2,9 @@
 const route = useRoute()
 const page = computed(() => +route.params.page || 1)
 const feed = computed(() => route.params.nav as string)
+useHead({
+  title: feed.value,
+})
 const listData = ref<any>({})
 async function getData() {
   const data = await $fetch('/api/feeds', {

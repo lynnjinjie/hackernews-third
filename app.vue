@@ -1,3 +1,9 @@
+<script setup lang="ts">
+useSeoMeta({
+  titleTemplate: 'Hacker News | %s',
+})
+</script>
+
 <template>
   <NuxtLayout>
     <NuxtPage />
