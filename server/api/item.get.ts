@@ -24,7 +24,7 @@ export async function fetchItem(id: string, withComments = false): Promise<any> 
 }
 
 export default defineEventHandler((event) => {
-  const { id } = getQuery(event) as { id: string }
+  const { id, withComments = false } = getQuery(event) as { id: string; withComments: boolean }
 
-  return fetchItem(id, true)
+  return fetchItem(id, withComments)
 })

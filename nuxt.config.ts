@@ -4,7 +4,6 @@ export default defineNuxtConfig({
     '@unocss/nuxt',
     '@vueuse/nuxt',
     '@pinia/nuxt',
-    // '@nuxtjs/dayjs',
     '@nuxtjs/color-mode',
   ],
   css: [

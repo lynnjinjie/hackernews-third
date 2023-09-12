@@ -18,7 +18,9 @@ defineProps<{
         <span px-2>|</span>
         <span>{{ timeAgo(item.time) }}</span>
         <span px-2>|</span>
-        <span>{{ item.comments_count }} commits</span>
+        <NuxtLink :to="`/item/${item.id}`" hover:underline>
+          {{ item.comments_count }} commits
+        </NuxtLink>
       </p>
     </li>
   </div>

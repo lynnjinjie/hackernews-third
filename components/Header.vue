@@ -16,11 +16,14 @@ const props = defineProps<{
       <NuxtLink to="/newest/1">
         news
       </NuxtLink>
-      <NuxtLink to="/">
-        past
+      <NuxtLink to="/ask/1">
+        ask
       </NuxtLink>
-      <NuxtLink to="/">
-        comments
+      <NuxtLink to="/show/1">
+        show
+      </NuxtLink>
+      <NuxtLink to="/jobs/1">
+        jobs
       </NuxtLink>
       <NuxtLink to="/about">
         about
