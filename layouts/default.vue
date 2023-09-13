@@ -10,7 +10,7 @@ const props = defineProps<{
 <template>
   <div>
     <Header />
-    <main mx-auto max-w-3xl>
+    <main mx-auto max-w-3xl px-2>
       <slot />
     </main>
   </div>

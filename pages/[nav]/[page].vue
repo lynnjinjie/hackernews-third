@@ -31,7 +31,7 @@ onMounted(() => getData())
 </script>
 
 <template>
-  <div relative px-2>
+  <div>
     <Loading v-if="!list.length" />
     <ul v-else>
       <PostItem v-for="item in list" :key="item.id" :item="item" />

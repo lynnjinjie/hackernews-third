@@ -1,6 +1,15 @@
 <script setup lang="ts">
 useSeoMeta({
-  titleTemplate: 'Hacker News | %s',
+  titleTemplate: (content) => {
+    return content === 'news' ? 'Hacker News' : `${content} | Hacker News`
+  },
+  description: 'A Hacker News clone Site',
+})
+
+useHead({
+  link: [
+    { rel: 'icon', href: '/favicon.ico' },
+  ],
 })
 </script>
 

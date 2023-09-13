@@ -13,11 +13,13 @@ defineProps<{
     </a>
     <p text-3 text-gray-400>
       <span pr-1>{{ item.points }} points by</span>
-      <span>{{ item.user }}</span>
+      <NuxtLink underline :to="`/user/${item.user}`">
+        {{ item.user }}
+      </NuxtLink>
       <span px-2>|</span>
       <span>{{ timeAgo(item.time) }}</span>
       <span px-2>|</span>
-      <NuxtLink :to="`/item/${item.id}`" hover:underline>
+      <NuxtLink :to="`/item/${item.id}`" underline>
         {{ item.comments_count }} commits
       </NuxtLink>
     </p>

@@ -20,8 +20,7 @@ async function fetchFeed(feed: keyof typeof feedUrls, page = 1) {
 }
 
 export default defineEventHandler(async (event) => {
-  // const data = await $fetch(`${baseURL}/topstories.json?print=pretty`)
-  const { feed = 'news' } = getQuery(event) as { feed: keyof typeof feedUrls }
+  const { page = 1, feed = 'news' } = getQuery(event) as { page: number; feed: keyof typeof feedUrls }
 
-  return fetchFeed(feed)
+  return fetchFeed(feed, page)
 })

@@ -23,7 +23,7 @@ function pluralize(n: number) {
 <template>
   <li>
     <p dark:text-white-200 border-t border-gray-3 p-1 text-3 text-zinc-500>
-      <span>by {{ comment.user }}</span>
+      <span>by <NuxtLink :to="`/user/${comment.user}`" underline>{{ comment.user }}</NuxtLink></span>
       <span px-2>|</span>
       <span>{{ timeAgo(comment.time) }}</span>
       <span px-2>|</span>
@@ -38,7 +38,7 @@ function pluralize(n: number) {
     >
       <a>{{ show ? '[-]' : `[+] ${pluralize(comment.comments.length)} collapsed` }}</a>
     </div>
-    <ul v-show="show" ml-6>
+    <ul v-show="show" ml-4>
       <PostComment
         v-for="childComment in comment.comments"
         :key="childComment.id"
@@ -56,7 +56,7 @@ function pluralize(n: number) {
   @apply whitespace-pre-wrap;
 }
 .content a {
-  @apply hover:(text-[#ff6600] decoration-dotted) decoration-[#ff6600] decoration-1 underline underline-offset-2;
+  @apply h-link;
 }
 .content p {
   @apply break-words py-1;

@@ -1,14 +1,14 @@
 import { defineStore } from 'pinia'
 
 export const useMainStore = defineStore('main', () => {
-  const newsTotal = ref<number>(0)
+  const pageLimit = useLocalStorage('pageLimit', 20)
 
-  function setNewsTotal(num: number) {
-    newsTotal.value = num
+  function setPageLimit(num: number) {
+    pageLimit.value = num
   }
 
   return {
-    newsTotal,
-    setNewsTotal,
+    pageLimit,
+    setPageLimit,
   }
 })

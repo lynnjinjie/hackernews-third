@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<Props>(), {
 const maxPage = computed(() => Math.ceil(props.total / 20))
 const hasMore = computed(() => props.page < maxPage.value)
 
-const isMdScreen = useMediaQuery('(min-width: 864px)')
+const isMdScreen = useMediaQuery('(min-width: 768px)')
 </script>
 
 <template>
@@ -32,7 +32,7 @@ const isMdScreen = useMediaQuery('(min-width: 864px)')
         <div i-carbon:arrow-right />
       </span>
     </div>
-    <div v-show="isMdScreen" class="fcc fixed right-[calc(calc(100vw-48rem)/2)] top-40 flex-col translate-x-14">
+    <div v-show="isMdScreen" class="fixed right-[calc(calc(100vw-48rem)/2)] top-50 fcc flex-col translate-x-14">
       <div class="pagination">
         <NuxtLink v-if="page > 1" :to="`/${nav}/${page - 1}`">
           <div i-carbon:caret-left class="arrow" />
@@ -41,7 +41,9 @@ const isMdScreen = useMediaQuery('(min-width: 864px)')
           <div i-carbon:caret-left class="arrow" />
         </div>
       </div>
-      <span w-14 text-center>{{ page }} / {{ maxPage > 99 ? '99+' : maxPage }}</span>
+      <span w-14 text-center :title="String(maxPage)">
+        {{ page }} / {{ maxPage === 0 ? '~' : maxPage }}
+      </span>
       <div class="pagination">
         <NuxtLink v-if="hasMore" :to="`/${nav}/${page + 1}`" inline-block>
           <div i-carbon:caret-right class="arrow" />
@@ -56,7 +58,13 @@ const isMdScreen = useMediaQuery('(min-width: 864px)')
 
 <style scoped>
 .pagination {
-  @apply fcc h-30 border bg-orange-50 dark:bg-zinc-900 w-14 text-center;
+  @apply h-30 border bg-orange-50 dark:bg-zinc-900 w-14 text-center cursor-pointer;
+}
+.pagination > * {
+  @apply w-full h-full fcc;
+}
+.pagination > a {
+  @apply hover:bg-orange-200 dark:hover:bg-zinc-700;
 }
 .arrow {
  @apply text-bold text-7;
