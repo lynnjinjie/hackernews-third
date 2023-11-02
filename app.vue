@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
   titleTemplate: (content) => {
-    return content === 'news' ? 'Hacker News' : `${content} | Hacker News`
+    return content ? `${content} | Hacker News ` : 'Hacker News'
   },
   description: 'A Hacker News clone Site',
 })
@@ -9,6 +9,13 @@ useSeoMeta({
 useHead({
   link: [
     { rel: 'icon', href: '/favicon.ico' },
+  ],
+  meta: [
+    { name: 'viewport', content: 'width=device-width,initial-scale=1' },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:title', content: 'hacknews' },
+    { property: 'og:description', content: 'A hacknews third Site' },
+    { property: 'og:image', content: '/favicon.ico' },
   ],
 })
 </script>
