@@ -1,4 +1,6 @@
 <script setup lang='ts'>
+import { pageSize } from '~/server/constants'
+
 interface Props {
   nav: string
   page: number
@@ -9,7 +11,7 @@ const props = withDefaults(defineProps<Props>(), {
   page: 1,
   total: 1,
 })
-const maxPage = computed(() => Math.ceil(props.total / 20))
+const maxPage = computed(() => Math.ceil(props.total / pageSize))
 const hasMore = computed(() => props.page < maxPage.value)
 
 const isMdScreen = useMediaQuery('(min-width: 768px)')

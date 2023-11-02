@@ -9,7 +9,7 @@ defineProps<{
 <template>
   <li py-2>
     <a :href="item.url" target="_blank" inline-block underline hover:decoration-dotted>
-      <h3 font-semibold>{{ item.title }}</h3>
+      <h2 text-4 font-semibold>{{ item.title }}</h2>
     </a>
     <p text-3 text-gray-400>
       <span pr-1>{{ item.points }} points by</span>
